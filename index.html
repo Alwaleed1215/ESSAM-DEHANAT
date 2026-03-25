@@ -7,9 +7,9 @@
     <link rel="icon" href="https://imgg.io/images/2026/03/25/095f24a272cf3ec4152e37330530fbb8.png" type="image/png">
     <meta property="og:image" content="https://imgg.io/images/2026/03/25/095f24a272cf3ec4152e37330530fbb8.png">
     
-    <title data-ar="عصام للدهانات | معلم دهانات بالرياض" data-en="Essam Paints | Painter in Riyadh">عصام للدهانات | معلم دهانات بالرياض</title>
+    <title data-ar="عصام للدهانات | مقاول دهانات بالرياض" data-en="Essam Paints | Painting Contractor in Riyadh">عصام للدهانات | مقاول دهانات بالرياض</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <script type="application/ld+json">
@@ -20,138 +20,156 @@
       "image": "https://imgg.io/images/2026/03/25/095f24a272cf3ec4152e37330530fbb8.png",
       "telephone": "+966540422053",
       "email": "esam41553@gmail.com",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "شارع أسيد بن الخضير",
-        "addressLocality": "الرياض",
-        "addressRegion": "الرياض",
-        "postalCode": "12467",
-        "addressCountry": "SA"
-      },
-      "areaServed": [ "حي المصيف", "حي التعاون", "الرياض" ],
+      "areaServed": [
+        { "@type": "City", "name": "الرياض" },
+        { "@type": "Neighborhood", "name": "حي المِصِيْف" },
+        { "@type": "Neighborhood", "name": "حي التعاون" }
+      ],
       "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 08:00-22:00",
-      "description": "عصام للدهانات تقدم خدمات الطلاء الداخلي والخارجي والديكورات في مدينة الرياض المعلم عصام مجلي متخصص في تأسيس ومعالجة الحوائط وتجديد المنازل والمكاتب باحترافية عالية"
+      "description": "عصام للدهانات تقدم خدمات الطلاء الداخلي والخارجي والديكورات بالرياض، متخصصون في تأسيس ومعالجة الحوائط وتجديد المنازل المكاتب باحترافية."
     }
     </script>
 
     <style>
         :root {
-            --bg-color: #f8f9fa;
+            --bg-color: #f4f6f9; /* لون فضي/أبيض فاتح وجذاب */
             --text-color: #2b2b2b;
             --primary-color: #1a252f;
-            --secondary-color: #e74c3c;
+            --secondary-color: #d4af37; /* لون ذهبي فخم */
             --accent-color: #3498db;
             --card-bg: #ffffff;
-            --nav-bg: rgba(255, 255, 255, 0.9);
-            --paint-gradient: linear-gradient(45deg, #e74c3c, #f1c40f, #2ecc71, #3498db, #9b59b6);
-            --shadow: 0 5px 15px rgba(0,0,0,0.08);
-            --card-border-radius: 12px;
+            --nav-bg: rgba(255, 255, 255, 0.95);
+            --gold-gradient: linear-gradient(45deg, #FFDF00, #D4AF37, #996515, #FFDF00);
+            --shadow: 0 8px 25px rgba(0,0,0,0.08);
+            --card-border-radius: 16px;
         }
 
         body.dark-mode {
             --bg-color: #121212;
-            --text-color: #e0e0e0;
-            --primary-color: #1a1a1a;
+            --text-color: #f1f1f1;
+            --primary-color: #e0e0e0;
             --card-bg: #1e1e1e;
-            --nav-bg: rgba(30, 30, 30, 0.9);
-            --shadow: 0 5px 15px rgba(0,0,0,0.5);
+            --nav-bg: rgba(30, 30, 30, 0.95);
+            --shadow: 0 8px 25px rgba(0,0,0,0.4);
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Cairo', sans-serif; background-color: var(--bg-color); color: var(--text-color); transition: background 0.3s, color 0.3s; padding-bottom: 70px; overflow-x: hidden; scroll-behavior: smooth; }
+        body { font-family: 'Cairo', sans-serif; background-color: var(--bg-color); color: var(--text-color); transition: background 0.4s, color 0.4s; padding-bottom: 90px; overflow-x: hidden; scroll-behavior: smooth; text-align: center; }
         a { text-decoration: none; color: inherit; }
+        p { line-height: 1.8; }
 
-        /* Preloader */
+        /* --- Preloader --- */
         #preloader { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--bg-color); z-index: 9999; display: flex; flex-direction: column; justify-content: center; align-items: center; transition: opacity 0.5s ease; }
-        .loader-ring { width: 120px; height: 120px; border-radius: 50%; padding: 5px; background: var(--paint-gradient); background-size: 300% 300%; animation: gradientMove 3s ease infinite, spin 2s linear infinite; margin-bottom: 20px; }
-        .loader-inner { width: 100%; height: 100%; background: var(--bg-color); border-radius: 50%; display: flex; justify-content: center; align-items: center; overflow: hidden; animation: reverseSpin 2s linear infinite; }
-        .loader-inner img { width: 80%; height: 80%; object-fit: contain; }
-        .preloader-text { font-size: 1.5rem; font-weight: 800; color: var(--text-color); margin-bottom: 10px; }
+        .loader-ring { width: 160px; height: 160px; border-radius: 50%; position: relative; display: flex; justify-content: center; align-items: center; margin-bottom: 25px; }
+        /* حركة الدائرة التي تكتمل */
+        .loader-ring::before { content: ''; position: absolute; inset: 0; border-radius: 50%; padding: 5px; background: conic-gradient(var(--secondary-color) var(--progress, 0%), transparent 0); animation: loadProgress 2.5s ease-in-out forwards; -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; }
+        .loader-inner img { width: 110px; height: 110px; object-fit: contain; animation: pulseImg 2s infinite; }
+        .preloader-text { font-size: 0.75rem; /* تم تصغير الخط 50% */ font-weight: 800; color: var(--text-color); margin-bottom: 10px; }
+        .preloader-subtext { font-size: 1.1rem; font-weight: 600; color: var(--text-color); }
         .loading-dots:after { content: ' .'; animation: dots 1.5s steps(5, end) infinite; }
-        .dev-sig-preloader { position: absolute; bottom: 30px; font-size: 0.9rem; font-weight: 600; color: var(--text-color); }
+        
+        @keyframes loadProgress { 0% { --progress: 0%; } 100% { --progress: 100%; } }
+        @property --progress { syntax: '<percentage>'; inherits: false; initial-value: 0%; }
+        @keyframes pulseImg { 0% { transform: scale(0.95); opacity: 0.8; } 50% { transform: scale(1.05); opacity: 1; } 100% { transform: scale(0.95); opacity: 0.8; } }
 
-        /* Animations */
-        @keyframes gradientMove { 0% {background-position: 0% 50%;} 50% {background-position: 100% 50%;} 100% {background-position: 0% 50%;} }
-        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-        @keyframes reverseSpin { 0% { transform: rotate(0deg); } 100% { transform: rotate(-360deg); } }
-        @keyframes dots { 0%, 20% { color: transparent; text-shadow: .25em 0 0 transparent, .5em 0 0 transparent; } 40% { color: var(--text-color); text-shadow: .25em 0 0 transparent, .5em 0 0 transparent; } 60% { text-shadow: .25em 0 0 var(--text-color), .5em 0 0 transparent; } 80%, 100% { text-shadow: .25em 0 0 var(--text-color), .5em 0 0 var(--text-color); } }
-        @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-8px); } 100% { transform: translateY(0px); } }
-        @keyframes pulseBorder { 0% { box-shadow: 0 0 0 0 rgba(231, 76, 60, 0.7); } 70% { box-shadow: 0 0 0 10px rgba(231, 76, 60, 0); } 100% { box-shadow: 0 0 0 0 rgba(231, 76, 60, 0); } }
-
-        /* Header */
-        header { position: fixed; top: 0; width: 100%; background: var(--nav-bg); backdrop-filter: blur(10px); box-shadow: var(--shadow); z-index: 1000; transition: all 0.3s; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; }
-        header.scrolled { padding: 5px 20px; background: rgba(26, 37, 47, 0.95); color: #fff; }
-        header.scrolled .controls i, header.scrolled .lang-btn { color: #fff; border-color: #fff; }
-        .brand { display: flex; align-items: center; gap: 10px; position: relative; }
-        .brand img { width: 40px; height: 40px; }
-        .brand h1 { font-size: 1.5rem; font-weight: 800; position: relative; display: inline-block; }
-        .brand h1::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 100%; height: 3px; background: var(--paint-gradient); border-radius: 5px; }
+        /* --- Header --- */
+        header { position: fixed; top: 0; left: 0; width: 100%; background: var(--nav-bg); backdrop-filter: blur(15px); box-shadow: var(--shadow); z-index: 1000; transition: all 0.4s; padding: 12px 25px; display: flex; justify-content: space-between; align-items: center; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; }
+        html[dir="ltr"] header { flex-direction: row-reverse; } /* الشعار يسار في الإنجليزي ويمين في العربي */
+        .brand { display: flex; align-items: center; gap: 12px; }
+        .brand img { width: 45px; height: 45px; }
+        .brand h1 { font-size: 1.4rem; font-weight: 900; }
         .controls { display: flex; align-items: center; gap: 15px; }
-        .controls i { font-size: 1.2rem; cursor: pointer; color: var(--text-color); transition: 0.3s; }
-        .lang-btn { border: 2px solid var(--text-color); border-radius: 5px; padding: 2px 8px; font-weight: 800; font-size: 0.9rem; cursor: pointer; color: var(--text-color); }
+        .controls i { font-size: 1.3rem; cursor: pointer; color: var(--text-color); transition: 0.3s; }
+        .lang-btn { border: 2px solid var(--text-color); border-radius: 8px; padding: 3px 10px; font-weight: 800; font-size: 0.9rem; cursor: pointer; transition: 0.3s; }
 
-        /* Sections */
-        section { padding: 80px 20px 40px; text-align: center; }
-        .hero { min-height: 50vh; display: flex; flex-direction: column; justify-content: center; align-items: center; }
-        .hero h2 { font-size: 2.5rem; margin-bottom: 15px; background: var(--paint-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        /* --- Hero Section --- */
+        section { padding: 100px 20px 50px; }
+        .hero { min-height: 60vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
         
-        .section-title { font-size: 2rem; color: var(--primary-color); margin-bottom: 20px; position: relative; display: inline-block; }
-        .section-title::after { content: ''; display: block; width: 50px; height: 4px; background: var(--secondary-color); margin: 8px auto 0; border-radius: 2px; }
+        /* الجملة الملونة بالفرشاة */
+        .colorful-heading { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-bottom: 25px; direction: rtl; }
+        .color-word { font-size: 1.8rem; font-weight: 900; position: relative; padding-bottom: 5px; display: inline-block; }
+        .color-word::after { content: '\f1fc'; font-family: 'Font Awesome 6 Free'; font-weight: 900; position: absolute; bottom: -8px; left: 50%; transform: translateX(-50%) rotate(-15deg); font-size: 0.8rem; opacity: 0.7; }
+        /* ألوان الكلمات */
+        .cw-1 { color: #5D9CEC; } .cw-1::after { color: #5D9CEC; }
+        .cw-2 { color: #ED5565; } .cw-2::after { color: #ED5565; }
+        .cw-3 { color: #48CFAD; } .cw-3::after { color: #48CFAD; }
+        .cw-4 { color: #FC6E51; } .cw-4::after { color: #FC6E51; }
+        .cw-5 { color: #AC92EC; } .cw-5::after { color: #AC92EC; }
+        .cw-6 { color: #D4AF37; } .cw-6::after { color: #D4AF37; }
+        .cw-7 { color: #4FC1E9; } .cw-7::after { color: #4FC1E9; }
+        .cw-8 { color: #EC87C0; } .cw-8::after { color: #EC87C0; }
 
-        /* 500 Char Description */
-        .services-intro { max-width: 900px; margin: 0 auto 40px; font-size: 1.1rem; line-height: 1.8; color: var(--text-color); background: var(--card-bg); padding: 25px; border-radius: var(--card-border-radius); box-shadow: var(--shadow); border-right: 4px solid var(--accent-color); text-align: right; }
+        .hero-desc { max-width: 850px; font-size: 1.1rem; color: var(--text-color); line-height: 1.9; background: var(--card-bg); padding: 25px; border-radius: 15px; box-shadow: var(--shadow); margin-top: 15px; border-bottom: 3px solid var(--secondary-color); font-weight: 600; }
 
-        /* Premium Cards Grid */
-        .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; max-width: 1200px; margin: 0 auto; padding: 10px; }
+        .section-title { font-size: 2.2rem; color: var(--primary-color); margin-bottom: 40px; font-weight: 900; position: relative; display: inline-block; }
+        .section-title::after { content: ''; display: block; width: 60px; height: 4px; background: var(--secondary-color); margin: 10px auto 0; border-radius: 5px; }
+
+        /* --- Services Grid --- */
+        .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; padding: 10px; }
+        .premium-card { position: relative; background: var(--card-bg); border-radius: var(--card-border-radius); padding: 35px 25px; text-align: center; box-shadow: var(--shadow); transition: transform 0.4s, box-shadow 0.4s; z-index: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; }
         
-        .premium-card { position: relative; background: var(--card-bg); border-radius: var(--card-border-radius); padding: 25px 20px; text-align: center; box-shadow: var(--shadow); transition: transform 0.4s ease, box-shadow 0.4s ease; cursor: pointer; z-index: 1; }
-        /* Gradient Border Trick */
-        .premium-card::before { content: ""; position: absolute; inset: 0; border-radius: var(--card-border-radius); padding: 3px; background: var(--paint-gradient); background-size: 200% 200%; -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; opacity: 0.7; transition: opacity 0.3s; z-index: -1; }
+        /* إطار ذهبي فخم مع فرشة بالأسفل */
+        .premium-card::before { content: ""; position: absolute; inset: 0; border-radius: var(--card-border-radius); padding: 3px; background: var(--gold-gradient); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; opacity: 0.8; transition: opacity 0.3s; z-index: -1; }
+        .premium-card::after { content: '\f1fc'; font-family: 'Font Awesome 6 Free'; font-weight: 900; position: absolute; bottom: -12px; left: 50%; transform: translateX(-50%); background: var(--card-bg); color: var(--secondary-color); width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1rem; border: 2px solid var(--secondary-color); box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: 0.4s; }
         
-        .premium-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.15); }
-        .premium-card:hover::before { opacity: 1; animation: gradientMove 2s ease infinite; }
+        .premium-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
+        .premium-card:hover::after { transform: translateX(-50%) scale(1.2) rotate(15deg); }
+        .premium-card i.card-icon { font-size: 2.8rem; color: var(--secondary-color); margin-bottom: 20px; transition: 0.3s; }
+        .premium-card h3 { font-size: 1.5rem; color: var(--primary-color); margin-bottom: 15px; font-weight: 900; }
+        .premium-card p { font-size: 0.95rem; color: var(--text-color); opacity: 0.85; line-height: 1.8; text-align: justify; text-align-last: center; }
         
-        .premium-card i { font-size: 2.5rem; color: var(--secondary-color); margin-bottom: 15px; background: var(--paint-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; transition: transform 0.3s; }
-        .premium-card:hover i { transform: scale(1.1); }
-        .premium-card h3 { font-size: 1.4rem; color: var(--primary-color); margin-bottom: 10px; font-weight: 800; }
-        .premium-card p { font-size: 1rem; color: #666; line-height: 1.6; }
-        .hook-text { color: var(--secondary-color); font-weight: 600; font-size: 0.95rem; display: block; margin-bottom: 5px; }
-        .dark-mode .premium-card p { color: #aaa; }
+        /* --- Advantages (400 chars each) --- */
+        #advantages { background-color: rgba(0,0,0,0.02); border-top: 1px solid rgba(0,0,0,0.05); }
+        .dark-mode #advantages { background-color: rgba(255,255,255,0.02); }
 
-        /* Map */
-        .map-container { max-width: 900px; margin: 20px auto; padding: 5px; border-radius: 15px; background: var(--paint-gradient); background-size: 300% 300%; animation: gradientMove 5s ease infinite; box-shadow: var(--shadow); }
-        .map-container iframe { width: 100%; height: 350px; border-radius: 10px; display: block; }
+        /* --- Location & Map --- */
+        .service-area-box { background: var(--card-bg); border: 2px dashed var(--secondary-color); padding: 20px; border-radius: 15px; max-width: 800px; margin: 0 auto 25px; font-size: 1.2rem; font-weight: 800; display: flex; align-items: center; justify-content: center; gap: 15px; flex-wrap: wrap; }
+        .area-tag { background: rgba(212, 175, 55, 0.15); color: var(--secondary-color); padding: 5px 15px; border-radius: 20px; font-size: 1.1rem; }
+        .map-container { max-width: 900px; margin: 0 auto; padding: 5px; border-radius: 20px; background: var(--gold-gradient); box-shadow: var(--shadow); }
+        .map-container iframe { width: 100%; height: 350px; border-radius: 15px; display: block; filter: grayscale(20%) contrast(1.1); }
 
-        /* Contact & Open Status */
-        .contact-section { background: var(--card-bg); padding: 40px 20px; border-radius: 15px; max-width: 800px; margin: 20px auto; box-shadow: var(--shadow); border-top: 4px solid var(--secondary-color); }
-        .contact-item { display: flex; align-items: center; justify-content: center; gap: 15px; margin: 15px 0; font-size: 1.2rem; font-weight: 600; }
+        /* --- Contact --- */
+        .contact-section { background: var(--card-bg); padding: 40px 20px; border-radius: 20px; max-width: 800px; margin: 0 auto; box-shadow: var(--shadow); border-top: 5px solid var(--secondary-color); }
+        .contact-item { display: flex; align-items: center; justify-content: center; gap: 15px; margin: 15px 0; font-size: 1.3rem; font-weight: 800; }
         .contact-item i { font-size: 1.8rem; color: var(--secondary-color); }
         
-        .status-badge { display: inline-flex; align-items: center; gap: 8px; padding: 8px 15px; border-radius: 20px; font-size: 1rem; font-weight: 800; background-color: #f1f2f6; margin-top: 10px; }
-        .status-dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; box-shadow: 0 0 8px currentColor; }
-        .status-open { color: #2ecc71; }
-        .status-closed { color: #e74c3c; }
-        .dark-mode .status-badge { background-color: #2f3640; }
+        .status-badge { display: inline-flex; align-items: center; gap: 10px; padding: 10px 20px; border-radius: 30px; font-size: 1.1rem; font-weight: 900; background-color: var(--bg-color); margin-top: 15px; border: 1px solid rgba(0,0,0,0.1); }
+        .status-dot { width: 14px; height: 14px; border-radius: 50%; display: inline-block; box-shadow: 0 0 10px currentColor; animation: pulseImg 2s infinite; }
+        .status-open { color: #2ecc71; } .status-closed { color: #e74c3c; }
 
-        /* Footer & Signatures */
-        footer { text-align: center; padding: 20px; margin-top: 40px; border-top: 1px solid #ccc; }
-        .dev-signature { display: inline-flex; align-items: center; gap: 10px; background: linear-gradient(135deg, #2c3e50, #000000); color: #ffd700; padding: 8px 20px; border-radius: 30px; font-size: 0.9rem; font-weight: 800; border: 1px solid #ffd700; box-shadow: 0 4px 10px rgba(0,0,0,0.3); transition: transform 0.3s; margin-top: 20px; cursor: pointer; animation: float 3s ease-in-out infinite; }
-        .dev-signature:hover { transform: scale(1.05); }
+        /* --- Footer & Dev Signature --- */
+        footer { text-align: center; padding: 40px 20px 120px; background: var(--card-bg); margin-top: 50px; border-top: 1px solid rgba(0,0,0,0.1); }
+        
+        .dev-signature { display: inline-flex; align-items: center; gap: 12px; background: linear-gradient(135deg, #1a1a1a, #333333); color: #FFDF00; padding: 12px 25px; border-radius: 15px; font-size: 1rem; font-weight: 900; border: 2px solid #FFDF00; box-shadow: 0 10px 20px rgba(0,0,0,0.2); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); margin-top: 25px; cursor: pointer; animation: floatSig 4s ease-in-out infinite; }
+        .dev-signature i { font-size: 1.2rem; }
+        .dev-signature:hover { transform: translateY(-5px) scale(1.05); box-shadow: 0 15px 30px rgba(255, 223, 0, 0.3); background: linear-gradient(135deg, #000, #222); }
+        
+        @keyframes floatSig { 0% { transform: translateY(0px); } 50% { transform: translateY(-8px); } 100% { transform: translateY(0px); } }
 
-        /* FABs & Bottom Nav */
-        .fab-container { position: fixed; left: 15px; bottom: 80px; display: flex; flex-direction: column; gap: 15px; z-index: 999; }
-        .fab { width: 45px; height: 45px; border-radius: 50%; display: flex; justify-content: center; align-items: center; color: #fff; font-size: 1.5rem; text-decoration: none; box-shadow: var(--shadow); transition: 0.3s; animation: pulseBorder 2s infinite; }
-        .fab.whatsapp { background-color: #25D366; }
-        .fab.call { background-color: var(--secondary-color); animation-delay: 1s; }
-        .fab:hover { transform: scale(1.1); }
+        /* --- Floating Bottom Nav --- */
+        .bottom-nav-container { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); width: 92%; max-width: 500px; display: flex; justify-content: center; align-items: flex-end; z-index: 1000; animation: floatSig 5s ease-in-out infinite; }
+        
+        .bottom-nav { background: var(--nav-bg); backdrop-filter: blur(20px); border-radius: 30px; display: flex; justify-content: space-between; align-items: center; padding: 8px 15px; width: 100%; box-shadow: 0 10px 30px rgba(0,0,0,0.15); border: 1px solid rgba(212, 175, 55, 0.3); position: relative; }
+        
+        .nav-item { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 5px; color: var(--text-color); text-decoration: none; transition: 0.3s; padding: 8px; border-radius: 50%; }
+        .nav-icon-wrapper { width: 45px; height: 45px; border-radius: 50%; background: var(--bg-color); display: flex; justify-content: center; align-items: center; font-size: 1.2rem; border: 1px solid rgba(0,0,0,0.05); transition: 0.3s; color: var(--primary-color); }
+        .nav-item span { font-size: 0.7rem; font-weight: 900; }
+        
+        .nav-item:hover .nav-icon-wrapper { background: var(--secondary-color); color: #fff; transform: translateY(-3px); }
 
-        .bottom-nav { position: fixed; bottom: 10px; left: 50%; transform: translateX(-50%); width: 92%; max-width: 400px; background: var(--nav-bg); backdrop-filter: blur(15px); border-radius: 20px; display: flex; justify-content: space-around; align-items: center; padding: 10px 0; box-shadow: 0 -2px 15px rgba(0,0,0,0.1); z-index: 1000; border: 1px solid rgba(255,255,255,0.2); }
-        .bottom-nav::before { content: ''; position: absolute; top: -2px; left: 0; width: 100%; height: 3px; background: var(--paint-gradient); border-radius: 20px 20px 0 0; }
-        .nav-item { color: var(--text-color); font-size: 1.3rem; display: flex; flex-direction: column; align-items: center; gap: 4px; transition: 0.3s; }
-        .nav-item.active { color: var(--secondary-color); transform: translateY(-5px); }
-        .nav-item span { font-size: 0.7rem; font-weight: 800; }
+        /* أيقونة الرئيسية العائمة في المنتصف */
+        .nav-home-wrapper { position: relative; flex: 1; display: flex; justify-content: center; }
+        .nav-home-btn { position: absolute; bottom: 5px; width: 65px; height: 65px; border-radius: 50%; background: var(--gold-gradient); color: #fff; display: flex; flex-direction: column; justify-content: center; align-items: center; font-size: 1.5rem; box-shadow: 0 10px 25px rgba(212, 175, 55, 0.5); border: 4px solid var(--card-bg); transition: 0.4s; z-index: 10; text-decoration: none; }
+        .nav-home-btn span { font-size: 0.65rem; font-weight: 900; margin-top: 3px; }
+        .nav-home-btn:hover { transform: translateY(-8px) scale(1.05); }
 
-        @media (min-width: 768px) { .bottom-nav { display: none; } body { padding-bottom: 0; } .fab-container { bottom: 30px; } }
+        /* إخفاء الناف بار في شاشات الكمبيوتر الكبيرة */
+        @media (min-width: 900px) {
+            .bottom-nav-container { display: none; }
+            body { padding-bottom: 0; }
+            footer { padding-bottom: 40px; }
+        }
     </style>
 </head>
 <body>
@@ -163,16 +181,13 @@
             </div>
         </div>
         <div class="preloader-text" data-ar="مرحباً بكم في موقع عصام للدهانات" data-en="Welcome to Essam Paints">مرحباً بكم في موقع عصام للدهانات</div>
-        <div style="font-size: 1.1rem; font-weight: 600;" data-ar="نورتوا موقعنا و<span class='loading-dots'></span>" data-en="Loading<span class='loading-dots'></span>">نورتوا موقعنا و<span class="loading-dots"></span></div>
-        <div class="dev-sig-preloader"><i class="fas fa-crown"></i> إسلام الشيخ <i class="fas fa-crown"></i></div>
+        <div class="preloader-subtext" data-ar="نورتوا موقعنا <span class='loading-dots'></span>" data-en="Loading<span class='loading-dots'></span>">نورتوا موقعنا <span class="loading-dots"></span></div>
     </div>
 
     <header id="header">
-        <div class="controls">
-            </div>
         <div class="brand">
             <img src="https://imgg.io/images/2026/03/25/095f24a272cf3ec4152e37330530fbb8.png" alt="عصام للدهانات">
-            <h1 data-ar="عصام للدهانات <i class='fas fa-paint-roller' style='font-size:1rem; color:var(--secondary-color);'></i>" data-en="Essam Paints <i class='fas fa-paint-roller' style='font-size:1rem; color:var(--secondary-color);'></i>">عصام للدهانات <i class="fas fa-paint-roller" style="font-size:1rem; color:var(--secondary-color);"></i></h1>
+            <h1 data-ar="عصام للدهانات" data-en="Essam Paints">عصام للدهانات</h1>
         </div>
         <div class="controls">
             <i class="fas fa-moon" id="themeToggle"></i>
@@ -181,94 +196,119 @@
     </header>
 
     <section class="hero" id="home">
-        <h2 data-ar="لمسة فنية وإبداع لجدرانك" data-en="Artistic Touch For Your Walls">لمسة فنية وإبداع لجدرانك</h2>
-        <p data-ar="مقاول دهانات محترف في الرياض - حي المِصِيْف والتعاون" data-en="Professional Painting Contractor in Riyadh - Al-Misif & Al-Taawun">مقاول دهانات محترف في الرياض - حي المِصِيْف والتعاون</p>
+        <div class="colorful-heading" id="heroHeading">
+            <span class="color-word cw-1">ألوان</span>
+            <span class="color-word cw-2">تعطي</span>
+            <span class="color-word cw-3">لمنزلك</span>
+            <span class="color-word cw-4">روح</span>
+            <span class="color-word cw-5">وتضفي</span>
+            <span class="color-word cw-6">لجدرانك</span>
+            <span class="color-word cw-7">فخامة</span>
+            <span class="color-word cw-8">وتميز</span>
+        </div>
+        
+        <div class="hero-desc" data-ar="عصام للدهانات تقدم خدمات الطلاء الداخلي والخارجي والديكورات بالرياض المعلم عصام مجلي متخصص في تأسيس ومعالجة الحوائط وتجديد المنازل والمكاتب باحترافية عالية نستخدم أفضل المواد لضمان جودة تدوم طويلا نغطي نطاق حي المصيف والتعاون وكافة أحياء الرياض مع الالتزام التام بالمواعيد ونظافة موقع العمل لضمان تقديم خدمة موثوقة وممتازة تلبي احتياجات العملاء" data-en="Essam Paints offers interior/exterior painting and decoration services in Riyadh. Master Essam Majali specializes in wall preparation and renovating homes and offices professionally. We use the best materials ensuring long-lasting quality. Covering Al-Misif, Al-Taawun, and all Riyadh, we commit to deadlines and site cleanliness, delivering reliable and excellent service tailored to customer needs.">
+            عصام للدهانات تقدم خدمات الطلاء الداخلي والخارجي والديكورات بالرياض المعلم عصام مجلي متخصص في تأسيس ومعالجة الحوائط وتجديد المنازل والمكاتب باحترافية عالية نستخدم أفضل المواد لضمان جودة تدوم طويلا نغطي نطاق حي المصيف والتعاون وكافة أحياء الرياض مع الالتزام التام بالمواعيد ونظافة موقع العمل لضمان تقديم خدمة موثوقة وممتازة تلبي احتياجات العملاء
+        </div>
     </section>
 
     <section id="services">
         <h2 class="section-title" data-ar="خدماتنا الاحترافية" data-en="Our Professional Services">خدماتنا الاحترافية</h2>
         
-        <div class="services-intro" data-ar="هل تبحث عن لمسة فنية تجدد بها مساحتك؟ نحن في عصام للدهانات نقدم لك حلولاً متكاملة لتحويل منزلك أو مكتبك إلى تحفة معمارية. بصفتنا خيارك الأول عند البحث عن معلم صباغ محترف في الرياض، نجمع بين دقة التنفيذ وجودة المواد لتنفيذ كافة أعمال الدهانات والديكورات الحديثة. نغطي نطاق حي المصيف والتعاون ومختلف أحياء الرياض لضمان وصول خدماتنا إليك بسرعة وكفاءة. سواء كنت تحتاج إلى تجديد بسيط أو ترميم شامل، فريقنا مستعد لتلبية تطلعاتك بأعلى معايير الجودة والالتزام التام بالمواعيد المحددة لنظافة موقعك." data-en="Looking for an artistic touch to renew your space? At Essam Paints, we offer integrated solutions to transform your home or office into an architectural masterpiece. As your premier choice for a professional painter in Riyadh, we combine precise execution with quality materials for all modern painting and decoration works. We cover Al-Misif, Al-Taawun, and all Riyadh neighborhoods to ensure prompt service. Whether a simple update or complete renovation, our team meets your expectations with the highest standards and strict adherence to deadlines.">
-            هل تبحث عن لمسة فنية تجدد بها مساحتك؟ نحن في عصام للدهانات نقدم لك حلولاً متكاملة لتحويل منزلك أو مكتبك إلى تحفة معمارية. بصفتنا خيارك الأول عند البحث عن <strong>معلم صباغ</strong> محترف في الرياض، نجمع بين دقة التنفيذ وجودة المواد لتنفيذ كافة أعمال الدهانات والديكورات الحديثة. نغطي نطاق حي المصيف والتعاون ومختلف أحياء الرياض لضمان وصول خدماتنا إليك بسرعة وكفاءة. سواء كنت تحتاج إلى تجديد بسيط أو ترميم شامل، فريقنا مستعد لتلبية تطلعاتك بأعلى معايير الجودة والالتزام التام بالمواعيد المحددة لنظافة موقعك.
-        </div>
-
         <div class="grid-container">
             <div class="premium-card">
-                <i class="fas fa-fill-drip"></i>
+                <i class="fas fa-fill-drip card-icon"></i>
                 <h3 data-ar="دهانات داخلية" data-en="Interior Paints">دهانات داخلية</h3>
-                <span class="hook-text" data-ar="ألوان تنبض بالحياة." data-en="Colors that come to life.">ألوان تنبض بالحياة.</span>
-                <p data-ar="نجدد غرفك بأحدث ألوان الطلاء التي تعكس شخصيتك وتضفي اتساعاً للمكان باستخدام مواد صحية وعديمة الرائحة." data-en="We renew your rooms with the latest paint colors that reflect your personality and add spaciousness.">نجدد غرفك بأحدث ألوان الطلاء التي تعكس شخصيتك وتضفي اتساعاً للمكان باستخدام مواد صحية وعديمة الرائحة.</p>
+                <p data-ar="نجدد غرفك بأحدث ألوان الطلاء التي تعكس شخصيتك وتضفي اتساعاً للمكان باستخدام مواد صحية وعديمة الرائحة." data-en="We renew your rooms with the latest paint colors reflecting your personality using odorless materials.">نجدد غرفك بأحدث ألوان الطلاء التي تعكس شخصيتك وتضفي اتساعاً للمكان باستخدام مواد صحية وعديمة الرائحة.</p>
             </div>
+            
             <div class="premium-card">
-                <i class="fas fa-home"></i>
+                <i class="fas fa-home card-icon"></i>
                 <h3 data-ar="دهانات خارجية" data-en="Exterior Paints">دهانات خارجية</h3>
-                <span class="hook-text" data-ar="واجهة تخطف الأنظار." data-en="An eye-catching facade.">واجهة تخطف الأنظار.</span>
-                <p data-ar="طلاء خارجي ببروفايل مقاوم للعوامل الجوية القاسية لحماية وتجميل واجهة مبناك لتدوم لسنوات طويلة." data-en="Exterior weather-resistant paints to protect and beautify your building's facade for years to come.">طلاء خارجي ببروفايل مقاوم للعوامل الجوية القاسية لحماية وتجميل واجهة مبناك لتدوم لسنوات طويلة.</p>
+                <p data-ar="طلاء خارجي ببروفايل مقاوم للعوامل الجوية القاسية لحماية وتجميل واجهة مبناك لتدوم لسنوات طويلة." data-en="Weather-resistant exterior paints to protect and beautify your building's facade for long years.">طلاء خارجي ببروفايل مقاوم للعوامل الجوية القاسية لحماية وتجميل واجهة مبناك لتدوم لسنوات طويلة.</p>
             </div>
+            
             <div class="premium-card">
-                <i class="fas fa-layer-group"></i>
+                <i class="fas fa-layer-group card-icon"></i>
                 <h3 data-ar="جبس بورد" data-en="Gypsum Board">جبس بورد</h3>
-                <span class="hook-text" data-ar="تصاميم سقفية مبهرة." data-en="Stunning ceiling designs.">تصاميم سقفية مبهرة.</span>
                 <p data-ar="تنفيذ قواطع وأسقف جبسية معلقة بتصاميم عصرية وكلاسيكية تناسب كافة ديكورات المنازل والمكاتب." data-en="Installing suspended gypsum ceilings and partitions with modern designs suitable for all decors.">تنفيذ قواطع وأسقف جبسية معلقة بتصاميم عصرية وكلاسيكية تناسب كافة ديكورات المنازل والمكاتب.</p>
             </div>
+            
             <div class="premium-card">
-                <i class="fas fa-gem"></i>
+                <i class="fas fa-gem card-icon"></i>
                 <h3 data-ar="بديل الرخام" data-en="Marble Alternative">بديل الرخام</h3>
-                <span class="hook-text" data-ar="فخامة الرخام بتكلفة أقل." data-en="Luxury of marble at a lower cost.">فخامة الرخام بتكلفة أقل.</span>
-                <p data-ar="تركيب ألواح بديل الرخام للأسطح والجدران بلمعان يعكس الرقي والفخامة وبمتانة عالية ضد الخدش." data-en="Installing marble alternative panels for walls with a shine that reflects luxury and high scratch resistance.">تركيب ألواح بديل الرخام للأسطح والجدران بلمعان يعكس الرقي والفخامة وبمتانة عالية ضد الخدش.</p>
+                <p data-ar="تركيب ألواح بديل الرخام للأسطح والجدران بلمعان يعكس الرقي والفخامة وبمتانة عالية ضد الخدش." data-en="Installing marble alternative panels with a luxurious shine and high scratch resistance.">تركيب ألواح بديل الرخام للأسطح والجدران بلمعان يعكس الرقي والفخامة وبمتانة عالية ضد الخدش.</p>
             </div>
+
             <div class="premium-card">
-                <i class="fas fa-scroll"></i>
+                <i class="fas fa-door-closed card-icon"></i>
+                <h3 data-ar="دهان وتلوين الأخشاب" data-en="Wood Painting & Staining">دهان وتلوين الأخشاب</h3>
+                <p data-ar="نقدم خدمات دهان وتلوين الأخشاب بأعلى مستويات الحرفية والإتقان، حيث نعيد إحياء الأبواب، النوافذ، والأثاث الخشبي بلمسات عصرية وألوان غنية تدوم طويلاً. نستخدم أفضل أنواع الطلاءات والورنيشات المقاومة للرطوبة والخدوش، مع التركيز على إبراز جمال عروق الخشب الطبيعية أو تغطيتها بألوان صلبة حسب رغبتك. سواء كنت تفضل المظهر الكلاسيكي الفاخر أو الطابع المودرن الجريء، نضمن لك حماية كاملة لأخشاب منزلك من التآكل وتجديداً شاملاً يضفي على مساحتك دفئاً ورقياً لا مثيل له، مع التزامنا التام بتسليم العمل في وقته." data-en="We offer professional wood painting and staining to revive doors, windows, and furniture with modern touches. Using top moisture-resistant varnishes, we highlight natural wood grains or apply solid colors per your preference, ensuring full protection and unmatched elegance.">نقدم خدمات دهان وتلوين الأخشاب بأعلى مستويات الحرفية والإتقان، حيث نعيد إحياء الأبواب، النوافذ، والأثاث الخشبي بلمسات عصرية وألوان غنية تدوم طويلاً. نستخدم أفضل أنواع الطلاءات والورنيشات المقاومة للرطوبة والخدوش، مع التركيز على إبراز جمال عروق الخشب الطبيعية أو تغطيتها بألوان صلبة حسب رغبتك. سواء كنت تفضل المظهر الكلاسيكي الفاخر أو الطابع المودرن الجريء، نضمن لك حماية كاملة لأخشاب منزلك من التآكل وتجديداً شاملاً يضفي على مساحتك دفئاً ورقياً لا مثيل له، مع التزامنا التام بتسليم العمل في وقته.</p>
+            </div>
+
+            <div class="premium-card">
+                <i class="fas fa-torii-gate card-icon"></i>
+                <h3 data-ar="دهان وتلوين الحديد" data-en="Iron Painting">دهان وتلوين الحديد</h3>
+                <p data-ar="تعتبر أعمال دهان وتلوين الحديد من أهم خطوات حماية المعادن وإبراز جمالها، ولذلك نوفر حلولاً متكاملة لطلاء الأبواب، النوافذ، والأسوار الحديدية بأجود أنواع الدهانات المقاومة للصدأ والتآكل وعوامل الطقس القاسية. نعتمد في عملنا على أحدث تقنيات الرش والطلاء لضمان تغطية مثالية وسطح أملس خالٍ من العيوب، مع توفير تشكيلة واسعة من الألوان والتشطيبات اللامعة والمطفية التي تتناسب مع الواجهات والديكورات المختلفة. نحرص على معالجة الحديد قبل الطلاء لضمان التصاق قوي وعمر افتراضي أطول يحافظ على رونق منزلك لسنوات." data-en="Iron painting is crucial for metal protection. We provide integrated solutions for doors and fences using anti-rust paints against harsh weather. Applying modern spraying techniques for flawless coverage, we offer glossy or matte finishes, ensuring strong adhesion and a long lifespan for your home's ironworks.">تعتبر أعمال دهان وتلوين الحديد من أهم خطوات حماية المعادن وإبراز جمالها، ولذلك نوفر حلولاً متكاملة لطلاء الأبواب، النوافذ، والأسوار الحديدية بأجود أنواع الدهانات المقاومة للصدأ والتآكل وعوامل الطقس القاسية. نعتمد في عملنا على أحدث تقنيات الرش والطلاء لضمان تغطية مثالية وسطح أملس خالٍ من العيوب، مع توفير تشكيلة واسعة من الألوان والتشطيبات اللامعة والمطفية التي تتناسب مع الواجهات والديكورات المختلفة. نحرص على معالجة الحديد قبل الطلاء لضمان التصاق قوي وعمر افتراضي أطول يحافظ على رونق منزلك لسنوات.</p>
+            </div>
+            
+            <div class="premium-card">
+                <i class="fas fa-scroll card-icon"></i>
                 <h3 data-ar="ورق جدران" data-en="Wallpapers">ورق جدران</h3>
-                <span class="hook-text" data-ar="جدران تروي قصة." data-en="Walls that tell a story.">جدران تروي قصة.</span>
                 <p data-ar="تشكيلة واسعة من ورق الجدران الكلاسيكي وثلاثي الأبعاد (3D) مع تركيب احترافي دقيق بدون فراغات." data-en="A wide variety of classic and 3D wallpapers with precise professional installation without gaps.">تشكيلة واسعة من ورق الجدران الكلاسيكي وثلاثي الأبعاد (3D) مع تركيب احترافي دقيق بدون فراغات.</p>
             </div>
+            
             <div class="premium-card">
-                <i class="fas fa-paint-brush"></i>
-                <h3 data-ar="أعمال بويات" data-en="Paint Works">أعمال بويات</h3>
-                <span class="hook-text" data-ar="تأسيس وتشطيب متقن." data-en="Masterful preparation & finishing.">تأسيس وتشطيب متقن.</span>
-                <p data-ar="معالجة التشققات، السنفرة، وتأسيس الجدران بالمعجون باحترافية لضمان ثبات الألوان ولمعانها المثالي." data-en="Treating cracks, sanding, and preparing walls with putty professionally to ensure color stability.">معالجة التشققات، السنفرة، وتأسيس الجدران بالمعجون باحترافية لضمان ثبات الألوان ولمعانها المثالي.</p>
-            </div>
-            <div class="premium-card">
-                <i class="fas fa-cubes"></i>
-                <h3 data-ar="ديكورات بديل الحجر" data-en="Stone Alternative">ديكورات بديل الحجر</h3>
-                <span class="hook-text" data-ar="طابع ريفي وعصري." data-en="Rustic and modern touch.">طابع ريفي وعصري.</span>
-                <p data-ar="لمسات ديكورية فنية باستخدام بديل الحجر لتطعيم المداخل والصالات بأسلوب معماري فريد وجذاب." data-en="Artistic decorative touches using stone alternatives for entrances and halls in a unique architectural style.">لمسات ديكورية فنية باستخدام بديل الحجر لتطعيم المداخل والصالات بأسلوب معماري فريد وجذاب.</p>
-            </div>
-            <div class="premium-card">
-                <i class="fas fa-tools"></i>
-                <h3 data-ar="ترميم وتشطيب مباني" data-en="Renovation & Finishing">ترميم وتشطيب مباني</h3>
-                <span class="hook-text" data-ar="من التأسيس للتسليم." data-en="From foundation to handover.">من التأسيس للتسليم.</span>
-                <p data-ar="خدمات ترميم شاملة تعيد إحياء المباني القديمة، وتشطيبات متكاملة للمباني الجديدة تسليم مفتاح." data-en="Comprehensive renovation services to revive old buildings, and turnkey finishing for new ones.">خدمات ترميم شاملة تعيد إحياء المباني القديمة، وتشطيبات متكاملة للمباني الجديدة تسليم مفتاح.</p>
+                <i class="fas fa-tools card-icon"></i>
+                <h3 data-ar="ترميم وتشطيب" data-en="Renovation">ترميم وتشطيب</h3>
+                <p data-ar="خدمات ترميم شاملة تعيد إحياء المباني القديمة، وتشطيبات متكاملة للمباني الجديدة تسليم مفتاح." data-en="Comprehensive renovation services reviving old buildings, and turnkey finishing for new ones.">خدمات ترميم شاملة تعيد إحياء المباني القديمة، وتشطيبات متكاملة للمباني الجديدة تسليم مفتاح.</p>
             </div>
         </div>
     </section>
 
-    <section id="advantages" style="background-color: var(--card-bg); padding-top: 40px; border-top: 1px solid #eaeaea; border-bottom: 1px solid #eaeaea;">
+    <section id="advantages">
         <h2 class="section-title" data-ar="لماذا تختارنا؟" data-en="Why Choose Us?">لماذا تختارنا؟</h2>
-        <div class="grid-container" style="max-width: 900px;">
+        <div class="grid-container">
+            
             <div class="premium-card">
-                <i class="fas fa-clock"></i>
-                <h3 data-ar="سرعة الإنجاز" data-en="Fast Execution">سرعة الإنجاز</h3>
-                <p data-ar="نلتزم بإنهاء العمل في الوقت المتفق عليه." data-en="We commit to finishing the work on the agreed time.">نلتزم بإنهاء العمل في الوقت المتفق عليه.</p>
+                <i class="fas fa-clock card-icon"></i>
+                <h3 data-ar="سرعة الإنجاز والالتزام" data-en="Speed & Commitment">سرعة الإنجاز والالتزام</h3>
+                <p data-ar="نحن ندرك تماماً أهمية وقتك، لذا نضع الالتزام بالمواعيد على رأس أولوياتنا في كافة المشاريع. فريقنا المحترف يتميز بمرونة عالية وقدرة فائقة على إنجاز كافة أعمال الدهانات والديكورات في الوقت المتفق عليه دون أي تأخير، مع الحفاظ على أعلى معايير الجودة والإتقان. نضمن لك سير العمل بانسيابية تامة ووفق جدول زمني دقيق ومدروس لتسليمك موقعك جاهزاً ومكتتملاً بأسرع وقت، لتعود لممارسة حياتك اليومية براحة بال." data-en="Understanding the value of your time, strict adherence to deadlines is our priority. Our team is flexible and capable of completing painting tasks on time without delay, maintaining top quality. We ensure smooth workflow based on a precise schedule to hand over your completed site swiftly.">نحن ندرك تماماً أهمية وقتك، لذا نضع الالتزام بالمواعيد على رأس أولوياتنا في كافة المشاريع. فريقنا المحترف يتميز بمرونة عالية وقدرة فائقة على إنجاز كافة أعمال الدهانات والديكورات في الوقت المتفق عليه دون أي تأخير، مع الحفاظ على أعلى معايير الجودة والإتقان. نضمن لك سير العمل بانسيابية تامة ووفق جدول زمني دقيق ومدروس لتسليمك موقعك جاهزاً ومكتتملاً بأسرع وقت، لتعود لممارسة حياتك اليومية براحة بال.</p>
             </div>
+            
             <div class="premium-card">
-                <i class="fas fa-medal"></i>
-                <h3 data-ar="جودة المواد" data-en="Quality Materials">جودة المواد</h3>
-                <p data-ar="نستخدم أفضل أنواع الدهانات المعتمدة عالمياً." data-en="We use the best internationally approved paint types.">نستخدم أفضل أنواع الدهانات المعتمدة عالمياً.</p>
+                <i class="fas fa-medal card-icon"></i>
+                <h3 data-ar="جودة المواد المستخدمة" data-en="Quality Materials">جودة المواد المستخدمة</h3>
+                <p data-ar="الجودة هي الأساس الذي نبني عليه ثقة عملائنا، ولذلك لا نساوم أبداً في اختيار المواد التي نستخدمها. نعتمد حصرياً على أفضل أنواع الدهانات والمعاجين المعتمدة عالمياً والمطابقة للمواصفات القياسية، والتي تتميز بثبات ألوانها، مقاومتها للتشققات والعوامل الجوية، وخلوها من الروائح المزعجة والمواد الضارة. تضمن لك هذه المواد الفاخرة تشطيبات نهائية مبهرة وعمراً افتراضياً طويلاً يبقي جدران منزلك مشرقة وجديدة." data-en="Quality builds trust; hence, we never compromise on materials. We exclusively use internationally certified paints that are colorfast, crack-resistant, odorless, and safe. These premium materials guarantee stunning finishes and a long lifespan, keeping your walls vibrant and new.">الجودة هي الأساس الذي نبني عليه ثقة عملائنا، ولذلك لا نساوم أبداً في اختيار المواد التي نستخدمها. نعتمد حصرياً على أفضل أنواع الدهانات والمعاجين المعتمدة عالمياً والمطابقة للمواصفات القياسية، والتي تتميز بثبات ألوانها، مقاومتها للتشققات والعوامل الجوية، وخلوها من الروائح المزعجة والمواد الضارة. تضمن لك هذه المواد الفاخرة تشطيبات نهائية مبهرة وعمراً افتراضياً طويلاً يبقي جدران منزلك مشرقة وجديدة.</p>
             </div>
+            
             <div class="premium-card">
-                <i class="fas fa-broom"></i>
-                <h3 data-ar="نظافة المكان" data-en="Site Cleanliness">نظافة المكان</h3>
-                <p data-ar="نحرص على تغطية الأثاث وتسليم الموقع نظيفاً." data-en="We ensure furniture is covered and the site is handed over clean.">نحرص على تغطية الأثاث وتسليم الموقع نظيفاً.</p>
+                <i class="fas fa-broom card-icon"></i>
+                <h3 data-ar="نظافة الموقع والتسليم" data-en="Site Cleanliness">نظافة الموقع والتسليم</h3>
+                <p data-ar="نظافة موقع العمل هي جزء لا يتجزأ من جودة خدمتنا الاحترافية. قبل البدء بأي أعمال، نقوم بتغطية وتغليف كافة الأثاث، الأرضيات، والنوافذ بعناية فائقة لحمايتها من أي بقع أو رذاذ طلاء. كما نحرص على ترتيب الموقع يومياً بعد انتهاء ساعات العمل، وعند التسليم النهائي، نقوم بتنظيف المكان بالكامل لضمان استلامك لمنزلك أو مكتبك وهو في أبهى حلة، جاهزاً للاستخدام الفوري دون حاجتك لبذل أي مجهود إضافي في التنظيف." data-en="Site cleanliness is integral to our service. Before starting, we carefully cover furniture, floors, and windows to prevent stains. We tidy up daily and upon final handover, we thoroughly clean the area so you receive your pristine home ready for immediate use without extra cleaning effort.">نظافة موقع العمل هي جزء لا يتجزأ من جودة خدمتنا الاحترافية. قبل البدء بأي أعمال، نقوم بتغطية وتغليف كافة الأثاث، الأرضيات، والنوافذ بعناية فائقة لحمايتها من أي بقع أو رذاذ طلاء. كما نحرص على ترتيب الموقع يومياً بعد انتهاء ساعات العمل، وعند التسليم النهائي، نقوم بتنظيف المكان بالكامل لضمان استلامك لمنزلك أو مكتبك وهو في أبهى حلة، جاهزاً للاستخدام الفوري دون حاجتك لبذل أي مجهود إضافي في التنظيف.</p>
             </div>
+            
+            <div class="premium-card">
+                <i class="fas fa-handshake card-icon"></i>
+                <h3 data-ar="أسعار تنافسية وضمان" data-en="Competitive Prices & Guarantee">أسعار تنافسية وضمان</h3>
+                <p data-ar="نقدم لك معادلة مثالية تجمع بين أعلى مستويات الجودة والأسعار التنافسية التي تناسب ميزانيتك. نحن نؤمن بأن الفخامة والعمل المتقن لا يعنيان بالضرورة تكلفة باهظة، لذا نوفر لك باقات وخيارات متنوعة تلبي كافة الاحتياجات. ولأننا نثق تماماً في كفاءة فريقنا وجودة المواد المستخدمة، نقدم لك ضمانات حقيقية وشاملة على كافة أعمال الدهانات والديكورات، لتطمئن وتستمتع بنتيجة نهائية تفوق توقعاتك وتدوم لسنوات طويلة." data-en="We offer the perfect formula combining top quality and competitive prices fitting your budget. Believing luxury shouldn't break the bank, we provide diverse packages. Trusting our team's competence and material quality, we offer comprehensive guarantees on all works, ensuring peace of mind.">نقدم لك معادلة مثالية تجمع بين أعلى مستويات الجودة والأسعار التنافسية التي تناسب ميزانيتك. نحن نؤمن بأن الفخامة والعمل المتقن لا يعنيان بالضرورة تكلفة باهظة، لذا نوفر لك باقات وخيارات متنوعة تلبي كافة الاحتياجات. ولأننا نثق تماماً في كفاءة فريقنا وجودة المواد المستخدمة، نقدم لك ضمانات حقيقية وشاملة على كافة أعمال الدهانات والديكورات، لتطمئن وتستمتع بنتيجة نهائية تفوق توقعاتك وتدوم لسنوات طويلة.</p>
+            </div>
+
         </div>
     </section>
 
     <section id="location">
-        <h2 class="section-title" data-ar="نطاق الخدمة" data-en="Service Area">نطاق الخدمة</h2>
+        <h2 class="section-title" data-ar="نطاق خدماتنا" data-en="Our Service Area">نطاق خدماتنا</h2>
+        
+        <div class="service-area-box">
+            <span data-ar="نطاق تقديم خدماتنا:" data-en="We provide services in:">نطاق تقديم خدماتنا:</span>
+            <span class="area-tag" data-ar="حي المِصِيْف" data-en="Al-Misif Dist">حي المِصِيْف</span>
+            <span class="area-tag" data-ar="حي التعاون" data-en="Al-Taawun Dist">حي التعاون</span>
+            <span class="area-tag" data-ar="كافة أحياء الرياض" data-en="All Riyadh">كافة أحياء الرياض</span>
+        </div>
+
         <div class="map-container">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14488.73031178713!2d46.6669!3d24.7576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2ee31070513909%3A0xc31245084cd290e9!2z2K3ZiiDYp9mE2YXZkdmQ2LXZkdmP2YHYjCDYp9mE2LHZitin2LY!5e0!3m2!1sar!2sSA!4v1700000000000!5m2!1sar!2sSA" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe src="https://maps.google.com/maps?q=الرياض،%20حي%20المصيف&t=&z=12&ie=UTF8&iwloc=&output=embed" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </section>
 
@@ -277,22 +317,18 @@
         <div class="contact-section">
             <div class="contact-item">
                 <i class="fas fa-envelope"></i>
-                <a href="mailto:esam41553@gmail.com">esam41553@gmail.com</a>
+                <a href="mailto:esam41553@gmail.com" dir="ltr">esam41553@gmail.com</a>
             </div>
             <div class="contact-item">
                 <i class="fab fa-whatsapp"></i>
                 <a href="https://wa.me/966540422053" dir="ltr">0540422053</a>
             </div>
-            <div class="contact-item" style="font-size: 1rem; color: gray;">
-                <i class="fas fa-map-marker-alt"></i>
-                <span data-ar="شارع أسيد بن الخضير، حي المِصِيْف، الرياض 12467" data-en="Osaid bin Al-Khudair St, Al-Misif, Riyadh 12467">شارع أسيد بن الخضير، حي المِصِيْف، الرياض 12467</span>
-            </div>
             
-            <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
+            <hr style="border: 0; border-top: 2px dashed rgba(0,0,0,0.1); margin: 30px 0;">
             
             <div style="text-align: center;">
-                <h4 style="color: var(--primary-color); margin-bottom: 5px;" data-ar="مواعيد العمل" data-en="Working Hours">مواعيد العمل</h4>
-                <p style="font-size: 1rem; color: #666;" data-ar="طوال أيام الأسبوع: من 8:00 صباحاً حتى 10:00 مساءً" data-en="Everyday: 08:00 AM to 10:00 PM">طوال أيام الأسبوع: من 8:00 صباحاً حتى 10:00 مساءً</p>
+                <h3 style="color: var(--primary-color); margin-bottom: 10px; font-weight: 900;" data-ar="مواعيد العمل" data-en="Working Hours">مواعيد العمل</h3>
+                <p style="font-size: 1.1rem; font-weight: 600;" data-ar="طوال أيام الأسبوع: من 8:00 صباحاً حتى 10:00 مساءً" data-en="Everyday: 08:00 AM to 10:00 PM">طوال أيام الأسبوع: من 8:00 صباحاً حتى 10:00 مساءً</p>
                 <div class="status-badge" id="statusBadge">
                     <span class="status-dot" id="statusDot"></span>
                     <span id="statusText" data-ar="جاري التحقق..." data-en="Checking status...">جاري التحقق...</span>
@@ -302,7 +338,8 @@
     </section>
 
     <footer>
-        <p data-ar="جميع الحقوق محفوظة لدى / عصام للدهانات 2026." data-en="All rights reserved to / Essam Paints 2026.">جميع الحقوق محفوظة لدى / عصام للدهانات 2026.</p>
+        <p style="font-weight: 800; font-size: 1.1rem; margin-bottom: 15px;" data-ar="جميع الحقوق محفوظة لدى / عصام للدهانات 2026." data-en="All rights reserved to / Essam Paints 2026.">جميع الحقوق محفوظة لدى / عصام للدهانات 2026.</p>
+        
         <a href="https://wa.me/966547194788" target="_blank" class="dev-signature">
             <i class="fas fa-crown"></i>
             <span data-ar="تم التصميم والتطوير بواسطة المهندس / إسلام الشيخ" data-en="Designed & Developed by Eng. Islam El-Sheikh">تم التصميم والتطوير بواسطة المهندس / إسلام الشيخ</span>
@@ -310,25 +347,34 @@
         </a>
     </footer>
 
-    <div class="fab-container">
-        <a href="https://wa.me/966540422053" class="fab whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
-        <a href="tel:0540422053" class="fab call"><i class="fas fa-phone-alt"></i></a>
+    <div class="bottom-nav-container">
+        <nav class="bottom-nav">
+            <a href="mailto:esam41553@gmail.com" class="nav-item">
+                <div class="nav-icon-wrapper"><i class="fas fa-envelope"></i></div>
+                <span data-ar="البريد" data-en="Email">البريد</span>
+            </a>
+            <a href="#services" class="nav-item">
+                <div class="nav-icon-wrapper"><i class="fas fa-paint-roller"></i></div>
+                <span data-ar="خدماتنا" data-en="Services">خدماتنا</span>
+            </a>
+            
+            <div class="nav-home-wrapper">
+                <a href="#home" class="nav-home-btn">
+                    <i class="fas fa-home"></i>
+                    <span data-ar="الرئيسية" data-en="Home">الرئيسية</span>
+                </a>
+            </div>
+            
+            <a href="#advantages" class="nav-item">
+                <div class="nav-icon-wrapper"><i class="fas fa-info-circle"></i></div>
+                <span data-ar="من نحن" data-en="About">من نحن</span>
+            </a>
+            <a href="https://wa.me/966540422053" target="_blank" class="nav-item">
+                <div class="nav-icon-wrapper" style="color: #25D366;"><i class="fab fa-whatsapp"></i></div>
+                <span data-ar="تواصل" data-en="Contact">تواصل</span>
+            </a>
+        </nav>
     </div>
-
-    <nav class="bottom-nav">
-        <a href="#services" class="nav-item">
-            <i class="fas fa-paint-roller"></i>
-            <span data-ar="خدماتنا" data-en="Services">خدماتنا</span>
-        </a>
-        <a href="#home" class="nav-item active">
-            <i class="fas fa-home"></i>
-            <span data-ar="الرئيسية" data-en="Home">الرئيسية</span>
-        </a>
-        <a href="#contact" class="nav-item">
-            <i class="fas fa-envelope"></i>
-            <span data-ar="تواصل" data-en="Contact">تواصل</span>
-        </a>
-    </nav>
 
     <script>
         // 1. Preloader Logic
@@ -336,26 +382,20 @@
             setTimeout(() => {
                 const preloader = document.getElementById('preloader');
                 preloader.style.opacity = '0';
-                setTimeout(() => { preloader.style.display = 'none'; }, 500);
-            }, 3000);
-            checkBusinessStatus(); // فحص حالة العمل عند التحميل
+                setTimeout(() => { preloader.style.display = 'none'; }, 600);
+            }, 2500); // 2.5 ثانية لإظهار حركة اكتمال الدائرة
+            checkBusinessStatus();
         });
 
-        // 2. Header Scroll Effect
-        window.addEventListener('scroll', () => {
-            const header = document.getElementById('header');
-            if (window.scrollY > 50) header.classList.add('scrolled');
-            else header.classList.remove('scrolled');
-        });
-
-        // 3. Dark Mode Toggle
+        // 2. Dark Mode Toggle
         const themeToggle = document.getElementById('themeToggle');
         themeToggle.addEventListener('click', () => {
             document.body.classList.toggle('dark-mode');
-            themeToggle.classList.replace(document.body.classList.contains('dark-mode') ? 'fa-moon' : 'fa-sun', document.body.classList.contains('dark-mode') ? 'fa-sun' : 'fa-moon');
+            const isDark = document.body.classList.contains('dark-mode');
+            themeToggle.classList.replace(isDark ? 'fa-moon' : 'fa-sun', isDark ? 'fa-sun' : 'fa-moon');
         });
 
-        // 4. Language Switcher (AR/EN)
+        // 3. Language Switcher (AR/EN)
         let currentLang = 'ar';
         function toggleLanguage() {
             currentLang = currentLang === 'ar' ? 'en' : 'ar';
@@ -363,48 +403,40 @@
             document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
             document.getElementById('langToggle').innerText = currentLang === 'ar' ? 'EN' : 'AR';
             
+            // تبديل النصوص
             document.querySelectorAll('[data-ar]').forEach(el => {
                 el.innerHTML = el.getAttribute(`data-${currentLang}`);
             });
-            
-            const fabContainer = document.querySelector('.fab-container');
-            const servicesIntro = document.querySelector('.services-intro');
-            if(currentLang === 'en') {
-                fabContainer.style.left = 'auto'; fabContainer.style.right = '15px';
-                servicesIntro.style.textAlign = 'left'; servicesIntro.style.borderRight = 'none'; servicesIntro.style.borderLeft = '4px solid var(--accent-color)';
+
+            // تبديل الجملة الملونة في الرئيسية (إخفاء في الإنجليزي لأنها مقسمة لحروف عربية معينة أو استبدالها)
+            const heroHeading = document.getElementById('heroHeading');
+            if (currentLang === 'en') {
+                heroHeading.innerHTML = `<span class="color-word cw-1">Colors</span> <span class="color-word cw-2">Giving</span> <span class="color-word cw-3">Your Home</span> <span class="color-word cw-4">Soul</span>`;
             } else {
-                fabContainer.style.left = '15px'; fabContainer.style.right = 'auto';
-                servicesIntro.style.textAlign = 'right'; servicesIntro.style.borderLeft = 'none'; servicesIntro.style.borderRight = '4px solid var(--accent-color)';
+                heroHeading.innerHTML = `<span class="color-word cw-1">ألوان</span> <span class="color-word cw-2">تعطي</span> <span class="color-word cw-3">لمنزلك</span> <span class="color-word cw-4">روح</span> <span class="color-word cw-5">وتضفي</span> <span class="color-word cw-6">لجدرانك</span> <span class="color-word cw-7">فخامة</span> <span class="color-word cw-8">وتميز</span>`;
             }
-            checkBusinessStatus(); // تحديث لغة حالة العمل
+            
+            checkBusinessStatus();
         }
 
-        // 5. Dynamic Business Hours Logic (Riyadh Time UTC+3)
+        // 4. Dynamic Business Hours Logic (Riyadh Time UTC+3)
         function checkBusinessStatus() {
             const dot = document.getElementById('statusDot');
             const text = document.getElementById('statusText');
             
-            // حساب الوقت بتوقيت الرياض
             const d = new Date();
             const utc = d.getTime() + (d.getTimezoneOffset() * 60000);
             const riyadhTime = new Date(utc + (3600000 * 3)); 
             const hour = riyadhTime.getHours();
 
-            // مواعيد العمل: من 8 صباحاً (8) إلى 10 مساءً (22)
             if (hour >= 8 && hour < 22) {
                 dot.className = 'status-dot status-open';
                 text.innerText = currentLang === 'ar' ? 'مفتوح الآن' : 'Open Now';
-                text.setAttribute('data-ar', 'مفتوح الآن');
-                text.setAttribute('data-en', 'Open Now');
             } else {
                 dot.className = 'status-dot status-closed';
                 text.innerText = currentLang === 'ar' ? 'مغلق الآن' : 'Closed Now';
-                text.setAttribute('data-ar', 'مغلق الآن');
-                text.setAttribute('data-en', 'Closed Now');
             }
         }
-        
-        // تحديث الحالة كل دقيقة
         setInterval(checkBusinessStatus, 60000);
     </script>
 </body>
