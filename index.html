@@ -32,10 +32,10 @@
 
     <style>
         :root {
-            --bg-color: #f4f6f9; /* لون فضي/أبيض فاتح وجذاب */
+            --bg-color: #f4f6f9;
             --text-color: #2b2b2b;
             --primary-color: #1a252f;
-            --secondary-color: #d4af37; /* لون ذهبي فخم */
+            --secondary-color: #d4af37;
             --accent-color: #3498db;
             --card-bg: #ffffff;
             --nav-bg: rgba(255, 255, 255, 0.95);
@@ -46,7 +46,7 @@
 
         body.dark-mode {
             --bg-color: #121212;
-            --text-color: #f1f1f1;
+            --text-color: #ffffff;
             --primary-color: #e0e0e0;
             --card-bg: #1e1e1e;
             --nav-bg: rgba(30, 30, 30, 0.95);
@@ -60,21 +60,23 @@
 
         /* --- Preloader --- */
         #preloader { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--bg-color); z-index: 9999; display: flex; flex-direction: column; justify-content: center; align-items: center; transition: opacity 0.5s ease; }
-        .loader-ring { width: 160px; height: 160px; border-radius: 50%; position: relative; display: flex; justify-content: center; align-items: center; margin-bottom: 25px; }
-        /* حركة الدائرة التي تكتمل */
+        .loader-ring { width: 180px; height: 180px; border-radius: 50%; position: relative; display: flex; justify-content: center; align-items: center; margin-bottom: 25px; }
         .loader-ring::before { content: ''; position: absolute; inset: 0; border-radius: 50%; padding: 5px; background: conic-gradient(var(--secondary-color) var(--progress, 0%), transparent 0); animation: loadProgress 2.5s ease-in-out forwards; -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; }
-        .loader-inner img { width: 110px; height: 110px; object-fit: contain; animation: pulseImg 2s infinite; }
-        .preloader-text { font-size: 0.75rem; /* تم تصغير الخط 50% */ font-weight: 800; color: var(--text-color); margin-bottom: 10px; }
-        .preloader-subtext { font-size: 1.1rem; font-weight: 600; color: var(--text-color); }
-        .loading-dots:after { content: ' .'; animation: dots 1.5s steps(5, end) infinite; }
+        .loader-inner img { width: 140px; height: 140px; object-fit: contain; animation: pulseImg 2s infinite; }
+        
+        /* حركة الآلة الكاتبة */
+        .typewriter-container { display: inline-flex; justify-content: center; }
+        .typewriter-text { font-size: 1.5rem; font-weight: 900; color: var(--text-color); overflow: hidden; white-space: nowrap; border-left: 3px solid var(--text-color); max-width: 0; animation: typing 2s steps(25, end) forwards, blink 0.75s step-end infinite; }
         
         @keyframes loadProgress { 0% { --progress: 0%; } 100% { --progress: 100%; } }
         @property --progress { syntax: '<percentage>'; inherits: false; initial-value: 0%; }
         @keyframes pulseImg { 0% { transform: scale(0.95); opacity: 0.8; } 50% { transform: scale(1.05); opacity: 1; } 100% { transform: scale(0.95); opacity: 0.8; } }
+        @keyframes typing { to { max-width: 100%; } }
+        @keyframes blink { from, to { border-color: transparent; } 50% { border-color: var(--text-color); } }
 
         /* --- Header --- */
         header { position: fixed; top: 0; left: 0; width: 100%; background: var(--nav-bg); backdrop-filter: blur(15px); box-shadow: var(--shadow); z-index: 1000; transition: all 0.4s; padding: 12px 25px; display: flex; justify-content: space-between; align-items: center; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; }
-        html[dir="ltr"] header { flex-direction: row-reverse; } /* الشعار يسار في الإنجليزي ويمين في العربي */
+        html[dir="ltr"] header { flex-direction: row-reverse; }
         .brand { display: flex; align-items: center; gap: 12px; }
         .brand img { width: 45px; height: 45px; }
         .brand h1 { font-size: 1.4rem; font-weight: 900; }
@@ -86,87 +88,75 @@
         section { padding: 100px 20px 50px; }
         .hero { min-height: 60vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
         
-        /* الجملة الملونة بالفرشاة */
-        .colorful-heading { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-bottom: 25px; direction: rtl; }
-        .color-word { font-size: 1.8rem; font-weight: 900; position: relative; padding-bottom: 5px; display: inline-block; }
-        .color-word::after { content: '\f1fc'; font-family: 'Font Awesome 6 Free'; font-weight: 900; position: absolute; bottom: -8px; left: 50%; transform: translateX(-50%) rotate(-15deg); font-size: 0.8rem; opacity: 0.7; }
-        /* ألوان الكلمات */
-        .cw-1 { color: #5D9CEC; } .cw-1::after { color: #5D9CEC; }
-        .cw-2 { color: #ED5565; } .cw-2::after { color: #ED5565; }
-        .cw-3 { color: #48CFAD; } .cw-3::after { color: #48CFAD; }
-        .cw-4 { color: #FC6E51; } .cw-4::after { color: #FC6E51; }
-        .cw-5 { color: #AC92EC; } .cw-5::after { color: #AC92EC; }
-        .cw-6 { color: #D4AF37; } .cw-6::after { color: #D4AF37; }
-        .cw-7 { color: #4FC1E9; } .cw-7::after { color: #4FC1E9; }
-        .cw-8 { color: #EC87C0; } .cw-8::after { color: #EC87C0; }
-
+        /* النص الرئيسي بدون ألوان الفرشاة */
+        .hero-main-title { font-size: 2.2rem; font-weight: 900; color: var(--text-color); margin-bottom: 25px; line-height: 1.5; transition: color 0.4s; max-width: 900px; }
+        
         .hero-desc { max-width: 850px; font-size: 1.1rem; color: var(--text-color); line-height: 1.9; background: var(--card-bg); padding: 25px; border-radius: 15px; box-shadow: var(--shadow); margin-top: 15px; border-bottom: 3px solid var(--secondary-color); font-weight: 600; }
-
         .section-title { font-size: 2.2rem; color: var(--primary-color); margin-bottom: 40px; font-weight: 900; position: relative; display: inline-block; }
         .section-title::after { content: ''; display: block; width: 60px; height: 4px; background: var(--secondary-color); margin: 10px auto 0; border-radius: 5px; }
 
         /* --- Services Grid --- */
         .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; padding: 10px; }
         .premium-card { position: relative; background: var(--card-bg); border-radius: var(--card-border-radius); padding: 35px 25px; text-align: center; box-shadow: var(--shadow); transition: transform 0.4s, box-shadow 0.4s; z-index: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; }
-        
-        /* إطار ذهبي فخم مع فرشة بالأسفل */
         .premium-card::before { content: ""; position: absolute; inset: 0; border-radius: var(--card-border-radius); padding: 3px; background: var(--gold-gradient); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; opacity: 0.8; transition: opacity 0.3s; z-index: -1; }
         .premium-card::after { content: '\f1fc'; font-family: 'Font Awesome 6 Free'; font-weight: 900; position: absolute; bottom: -12px; left: 50%; transform: translateX(-50%); background: var(--card-bg); color: var(--secondary-color); width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1rem; border: 2px solid var(--secondary-color); box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: 0.4s; }
-        
         .premium-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
         .premium-card:hover::after { transform: translateX(-50%) scale(1.2) rotate(15deg); }
         .premium-card i.card-icon { font-size: 2.8rem; color: var(--secondary-color); margin-bottom: 20px; transition: 0.3s; }
         .premium-card h3 { font-size: 1.5rem; color: var(--primary-color); margin-bottom: 15px; font-weight: 900; }
         .premium-card p { font-size: 0.95rem; color: var(--text-color); opacity: 0.85; line-height: 1.8; text-align: justify; text-align-last: center; }
         
-        /* --- Advantages (400 chars each) --- */
+        /* --- Advantages --- */
         #advantages { background-color: rgba(0,0,0,0.02); border-top: 1px solid rgba(0,0,0,0.05); }
         .dark-mode #advantages { background-color: rgba(255,255,255,0.02); }
 
-        /* --- Location & Map --- */
+        /* --- Location & Map (Terrain) --- */
         .service-area-box { background: var(--card-bg); border: 2px dashed var(--secondary-color); padding: 20px; border-radius: 15px; max-width: 800px; margin: 0 auto 25px; font-size: 1.2rem; font-weight: 800; display: flex; align-items: center; justify-content: center; gap: 15px; flex-wrap: wrap; }
         .area-tag { background: rgba(212, 175, 55, 0.15); color: var(--secondary-color); padding: 5px 15px; border-radius: 20px; font-size: 1.1rem; }
         .map-container { max-width: 900px; margin: 0 auto; padding: 5px; border-radius: 20px; background: var(--gold-gradient); box-shadow: var(--shadow); }
-        .map-container iframe { width: 100%; height: 350px; border-radius: 15px; display: block; filter: grayscale(20%) contrast(1.1); }
+        .map-container iframe { width: 100%; height: 350px; border-radius: 15px; display: block; filter: contrast(1.1); }
 
         /* --- Contact --- */
         .contact-section { background: var(--card-bg); padding: 40px 20px; border-radius: 20px; max-width: 800px; margin: 0 auto; box-shadow: var(--shadow); border-top: 5px solid var(--secondary-color); }
         .contact-item { display: flex; align-items: center; justify-content: center; gap: 15px; margin: 15px 0; font-size: 1.3rem; font-weight: 800; }
         .contact-item i { font-size: 1.8rem; color: var(--secondary-color); }
-        
         .status-badge { display: inline-flex; align-items: center; gap: 10px; padding: 10px 20px; border-radius: 30px; font-size: 1.1rem; font-weight: 900; background-color: var(--bg-color); margin-top: 15px; border: 1px solid rgba(0,0,0,0.1); }
         .status-dot { width: 14px; height: 14px; border-radius: 50%; display: inline-block; box-shadow: 0 0 10px currentColor; animation: pulseImg 2s infinite; }
         .status-open { color: #2ecc71; } .status-closed { color: #e74c3c; }
 
-        /* --- Footer & Dev Signature --- */
-        footer { text-align: center; padding: 40px 20px 120px; background: var(--card-bg); margin-top: 50px; border-top: 1px solid rgba(0,0,0,0.1); }
+        /* --- Footer & Dev Signature (Scaled Down & One Line) --- */
+        footer { text-align: center; padding: 40px 20px 120px; background: var(--card-bg); margin-top: 50px; border-top: 1px solid rgba(0,0,0,0.1); display: flex; flex-direction: column; align-items: center; justify-content: center; }
         
-        .dev-signature { display: inline-flex; align-items: center; gap: 12px; background: linear-gradient(135deg, #1a1a1a, #333333); color: #FFDF00; padding: 12px 25px; border-radius: 15px; font-size: 1rem; font-weight: 900; border: 2px solid #FFDF00; box-shadow: 0 10px 20px rgba(0,0,0,0.2); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); margin-top: 25px; cursor: pointer; animation: floatSig 4s ease-in-out infinite; }
-        .dev-signature i { font-size: 1.2rem; }
-        .dev-signature:hover { transform: translateY(-5px) scale(1.05); box-shadow: 0 15px 30px rgba(255, 223, 0, 0.3); background: linear-gradient(135deg, #000, #222); }
+        .copyright-text { font-weight: 800; font-size: 0.65rem; margin-bottom: 10px; white-space: nowrap; color: var(--text-color); }
         
-        @keyframes floatSig { 0% { transform: translateY(0px); } 50% { transform: translateY(-8px); } 100% { transform: translateY(0px); } }
+        .dev-signature { display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: linear-gradient(135deg, #1a1a1a, #333333); color: #FFDF00; padding: 8px 15px; border-radius: 10px; font-size: 0.5rem; font-weight: 900; border: 1px solid #FFDF00; box-shadow: 0 5px 15px rgba(0,0,0,0.2); transition: all 0.4s; cursor: pointer; white-space: nowrap; }
+        .dev-signature i { font-size: 0.6rem; }
+        .dev-signature:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(255, 223, 0, 0.3); background: linear-gradient(135deg, #000, #222); }
 
-        /* --- Floating Bottom Nav --- */
-        .bottom-nav-container { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); width: 92%; max-width: 500px; display: flex; justify-content: center; align-items: flex-end; z-index: 1000; animation: floatSig 5s ease-in-out infinite; }
-        
+        /* --- Floating Buttons (Left Side) --- */
+        .fab-wrapper { position: fixed; left: 15px; bottom: 85px; display: flex; flex-direction: column; gap: 12px; z-index: 999; }
+        .fab-btn { width: 48px; height: 48px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 1.4rem; color: #fff; box-shadow: 0 5px 15px rgba(0,0,0,0.25); transition: 0.3s; animation: floatFab 3s ease-in-out infinite; }
+        .fab-whatsapp { background: #25D366; }
+        .fab-call { background: var(--secondary-color); animation-delay: 1.5s; }
+        .fab-btn:hover { transform: scale(1.15) rotate(-10deg); }
+        @keyframes floatFab { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+
+        /* --- Bottom Nav (Centered) --- */
+        .bottom-nav-container { position: fixed; bottom: 12px; left: 50%; transform: translateX(-50%); width: 92%; max-width: 450px; z-index: 1000; animation: floatSig 5s ease-in-out infinite; }
         .bottom-nav { background: var(--nav-bg); backdrop-filter: blur(20px); border-radius: 30px; display: flex; justify-content: space-between; align-items: center; padding: 8px 15px; width: 100%; box-shadow: 0 10px 30px rgba(0,0,0,0.15); border: 1px solid rgba(212, 175, 55, 0.3); position: relative; }
-        
-        .nav-item { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 5px; color: var(--text-color); text-decoration: none; transition: 0.3s; padding: 8px; border-radius: 50%; }
-        .nav-icon-wrapper { width: 45px; height: 45px; border-radius: 50%; background: var(--bg-color); display: flex; justify-content: center; align-items: center; font-size: 1.2rem; border: 1px solid rgba(0,0,0,0.05); transition: 0.3s; color: var(--primary-color); }
-        .nav-item span { font-size: 0.7rem; font-weight: 900; }
-        
+        .nav-item { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 5px; color: var(--text-color); text-decoration: none; transition: 0.3s; padding: 5px; }
+        .nav-icon-wrapper { width: 42px; height: 42px; border-radius: 50%; background: var(--bg-color); display: flex; justify-content: center; align-items: center; font-size: 1.1rem; border: 1px solid rgba(0,0,0,0.05); transition: 0.3s; color: var(--primary-color); }
+        .nav-item span { font-size: 0.65rem; font-weight: 900; }
         .nav-item:hover .nav-icon-wrapper { background: var(--secondary-color); color: #fff; transform: translateY(-3px); }
-
-        /* أيقونة الرئيسية العائمة في المنتصف */
+        
+        /* زر الرئيسية */
         .nav-home-wrapper { position: relative; flex: 1; display: flex; justify-content: center; }
-        .nav-home-btn { position: absolute; bottom: 5px; width: 65px; height: 65px; border-radius: 50%; background: var(--gold-gradient); color: #fff; display: flex; flex-direction: column; justify-content: center; align-items: center; font-size: 1.5rem; box-shadow: 0 10px 25px rgba(212, 175, 55, 0.5); border: 4px solid var(--card-bg); transition: 0.4s; z-index: 10; text-decoration: none; }
-        .nav-home-btn span { font-size: 0.65rem; font-weight: 900; margin-top: 3px; }
+        .nav-home-btn { position: absolute; bottom: 5px; width: 60px; height: 60px; border-radius: 50%; background: var(--gold-gradient); color: #fff; display: flex; flex-direction: column; justify-content: center; align-items: center; font-size: 1.4rem; box-shadow: 0 10px 25px rgba(212, 175, 55, 0.5); border: 4px solid var(--card-bg); transition: 0.4s; z-index: 10; text-decoration: none; }
+        .nav-home-btn span { font-size: 0.6rem; font-weight: 900; margin-top: 2px; }
         .nav-home-btn:hover { transform: translateY(-8px) scale(1.05); }
 
-        /* إخفاء الناف بار في شاشات الكمبيوتر الكبيرة */
         @media (min-width: 900px) {
-            .bottom-nav-container { display: none; }
+            .bottom-nav-container, .fab-wrapper { display: none; }
             body { padding-bottom: 0; }
             footer { padding-bottom: 40px; }
         }
@@ -180,8 +170,9 @@
                 <img src="https://imgg.io/images/2026/03/25/095f24a272cf3ec4152e37330530fbb8.png" alt="شعار">
             </div>
         </div>
-        <div class="preloader-text" data-ar="مرحباً بكم في موقع عصام للدهانات" data-en="Welcome to Essam Paints">مرحباً بكم في موقع عصام للدهانات</div>
-        <div class="preloader-subtext" data-ar="نورتوا موقعنا <span class='loading-dots'></span>" data-en="Loading<span class='loading-dots'></span>">نورتوا موقعنا <span class="loading-dots"></span></div>
+        <div class="typewriter-container">
+            <div class="typewriter-text" data-ar="نورتوا موقعنا" data-en="Welcome to our site">نورتوا موقعنا</div>
+        </div>
     </div>
 
     <header id="header">
@@ -196,25 +187,17 @@
     </header>
 
     <section class="hero" id="home">
-        <div class="colorful-heading" id="heroHeading">
-            <span class="color-word cw-1">ألوان</span>
-            <span class="color-word cw-2">تعطي</span>
-            <span class="color-word cw-3">لمنزلك</span>
-            <span class="color-word cw-4">روح</span>
-            <span class="color-word cw-5">وتضفي</span>
-            <span class="color-word cw-6">لجدرانك</span>
-            <span class="color-word cw-7">فخامة</span>
-            <span class="color-word cw-8">وتميز</span>
-        </div>
+        <h2 class="hero-main-title" data-ar="ألوان تعطي لمنزلك روح وتضفي لجدرانك فخامة وتميز" data-en="Colors Giving Your Home Soul & Elegance">
+            ألوان تعطي لمنزلك روح وتضفي لجدرانك فخامة وتميز
+        </h2>
         
         <div class="hero-desc" data-ar="عصام للدهانات تقدم خدمات الطلاء الداخلي والخارجي والديكورات بالرياض المعلم عصام مجلي متخصص في تأسيس ومعالجة الحوائط وتجديد المنازل والمكاتب باحترافية عالية نستخدم أفضل المواد لضمان جودة تدوم طويلا نغطي نطاق حي المصيف والتعاون وكافة أحياء الرياض مع الالتزام التام بالمواعيد ونظافة موقع العمل لضمان تقديم خدمة موثوقة وممتازة تلبي احتياجات العملاء" data-en="Essam Paints offers interior/exterior painting and decoration services in Riyadh. Master Essam Majali specializes in wall preparation and renovating homes and offices professionally. We use the best materials ensuring long-lasting quality. Covering Al-Misif, Al-Taawun, and all Riyadh, we commit to deadlines and site cleanliness, delivering reliable and excellent service tailored to customer needs.">
-            عصام للدهانات تقدم خدمات الطلاء الداخلي والخارجي والديكورات بالرياض المعلم عصام مجلي متخصص في تأسيس ومعالجة الحوائط وتجديد المنازل والمكاتب باحترافية عالية نستخدم أفضل المواد لضمان جودة تدوم طويلا نغطي نطاق حي المصيف والتعاون وكافة أحياء الرياض مع الالتزام التام بالمواعيد ونظافة موقع العمل لضمان تقديم خدمة موثوقة وممتازة تلبي احتياجات العملاء
+            عصام للدهانات تقدم خدمات الطلاء الداخلي والخارجي والديكورات بالرياض المعلم عصام مجلي متخصص في تأسيس ومعالجة الحوائط وتجديد المنازل والمكاتب باحترافية عالية نستخدم أفضل المواد لضمان جودة تدوم طويلا نغطي نطاق حي المِصِيْف والتعاون وكافة أحياء الرياض مع الالتزام التام بالمواعيد ونظافة موقع العمل لضمان تقديم خدمة موثوقة وممتازة تلبي احتياجات العملاء
         </div>
     </section>
 
     <section id="services">
         <h2 class="section-title" data-ar="خدماتنا الاحترافية" data-en="Our Professional Services">خدماتنا الاحترافية</h2>
-        
         <div class="grid-container">
             <div class="premium-card">
                 <i class="fas fa-fill-drip card-icon"></i>
@@ -269,7 +252,6 @@
     <section id="advantages">
         <h2 class="section-title" data-ar="لماذا تختارنا؟" data-en="Why Choose Us?">لماذا تختارنا؟</h2>
         <div class="grid-container">
-            
             <div class="premium-card">
                 <i class="fas fa-clock card-icon"></i>
                 <h3 data-ar="سرعة الإنجاز والالتزام" data-en="Speed & Commitment">سرعة الإنجاز والالتزام</h3>
@@ -293,7 +275,6 @@
                 <h3 data-ar="أسعار تنافسية وضمان" data-en="Competitive Prices & Guarantee">أسعار تنافسية وضمان</h3>
                 <p data-ar="نقدم لك معادلة مثالية تجمع بين أعلى مستويات الجودة والأسعار التنافسية التي تناسب ميزانيتك. نحن نؤمن بأن الفخامة والعمل المتقن لا يعنيان بالضرورة تكلفة باهظة، لذا نوفر لك باقات وخيارات متنوعة تلبي كافة الاحتياجات. ولأننا نثق تماماً في كفاءة فريقنا وجودة المواد المستخدمة، نقدم لك ضمانات حقيقية وشاملة على كافة أعمال الدهانات والديكورات، لتطمئن وتستمتع بنتيجة نهائية تفوق توقعاتك وتدوم لسنوات طويلة." data-en="We offer the perfect formula combining top quality and competitive prices fitting your budget. Believing luxury shouldn't break the bank, we provide diverse packages. Trusting our team's competence and material quality, we offer comprehensive guarantees on all works, ensuring peace of mind.">نقدم لك معادلة مثالية تجمع بين أعلى مستويات الجودة والأسعار التنافسية التي تناسب ميزانيتك. نحن نؤمن بأن الفخامة والعمل المتقن لا يعنيان بالضرورة تكلفة باهظة، لذا نوفر لك باقات وخيارات متنوعة تلبي كافة الاحتياجات. ولأننا نثق تماماً في كفاءة فريقنا وجودة المواد المستخدمة، نقدم لك ضمانات حقيقية وشاملة على كافة أعمال الدهانات والديكورات، لتطمئن وتستمتع بنتيجة نهائية تفوق توقعاتك وتدوم لسنوات طويلة.</p>
             </div>
-
         </div>
     </section>
 
@@ -308,8 +289,9 @@
         </div>
 
         <div class="map-container">
-            <iframe src="https://maps.google.com/maps?q=الرياض،%20حي%20المصيف&t=&z=12&ie=UTF8&iwloc=&output=embed" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe src="https://maps.google.com/maps?q=حي+المصيف+و+حي+التعاون+الرياض&t=p&z=13&ie=UTF8&iwloc=&output=embed" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
+        <p style="font-size: 0.85rem; color: #888; margin-top: 10px;" data-ar="(الخريطة توضح التضاريس التقريبية لنطاق العمل في أحياء الرياض)" data-en="(Map shows approximate terrain for service areas in Riyadh)">(الخريطة توضح التضاريس التقريبية لنطاق العمل في أحياء الرياض)</p>
     </section>
 
     <section id="contact">
@@ -338,7 +320,7 @@
     </section>
 
     <footer>
-        <p style="font-weight: 800; font-size: 1.1rem; margin-bottom: 15px;" data-ar="جميع الحقوق محفوظة لدى / عصام للدهانات 2026." data-en="All rights reserved to / Essam Paints 2026.">جميع الحقوق محفوظة لدى / عصام للدهانات 2026.</p>
+        <p class="copyright-text" data-ar="جميع الحقوق محفوظة لدى / عصام للدهانات 2026." data-en="All rights reserved to / Essam Paints 2026.">جميع الحقوق محفوظة لدى / عصام للدهانات 2026.</p>
         
         <a href="https://wa.me/966547194788" target="_blank" class="dev-signature">
             <i class="fas fa-crown"></i>
@@ -346,6 +328,11 @@
             <i class="fas fa-crown"></i>
         </a>
     </footer>
+
+    <div class="fab-wrapper">
+        <a href="https://wa.me/966540422053" class="fab-btn fab-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="tel:0540422053" class="fab-btn fab-call"><i class="fas fa-phone-alt"></i></a>
+    </div>
 
     <div class="bottom-nav-container">
         <nav class="bottom-nav">
@@ -369,8 +356,8 @@
                 <div class="nav-icon-wrapper"><i class="fas fa-info-circle"></i></div>
                 <span data-ar="من نحن" data-en="About">من نحن</span>
             </a>
-            <a href="https://wa.me/966540422053" target="_blank" class="nav-item">
-                <div class="nav-icon-wrapper" style="color: #25D366;"><i class="fab fa-whatsapp"></i></div>
+            <a href="#contact" class="nav-item">
+                <div class="nav-icon-wrapper"><i class="fas fa-headset"></i></div>
                 <span data-ar="تواصل" data-en="Contact">تواصل</span>
             </a>
         </nav>
@@ -383,7 +370,7 @@
                 const preloader = document.getElementById('preloader');
                 preloader.style.opacity = '0';
                 setTimeout(() => { preloader.style.display = 'none'; }, 600);
-            }, 2500); // 2.5 ثانية لإظهار حركة اكتمال الدائرة
+            }, 2500); 
             checkBusinessStatus();
         });
 
@@ -403,19 +390,9 @@
             document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
             document.getElementById('langToggle').innerText = currentLang === 'ar' ? 'EN' : 'AR';
             
-            // تبديل النصوص
             document.querySelectorAll('[data-ar]').forEach(el => {
                 el.innerHTML = el.getAttribute(`data-${currentLang}`);
             });
-
-            // تبديل الجملة الملونة في الرئيسية (إخفاء في الإنجليزي لأنها مقسمة لحروف عربية معينة أو استبدالها)
-            const heroHeading = document.getElementById('heroHeading');
-            if (currentLang === 'en') {
-                heroHeading.innerHTML = `<span class="color-word cw-1">Colors</span> <span class="color-word cw-2">Giving</span> <span class="color-word cw-3">Your Home</span> <span class="color-word cw-4">Soul</span>`;
-            } else {
-                heroHeading.innerHTML = `<span class="color-word cw-1">ألوان</span> <span class="color-word cw-2">تعطي</span> <span class="color-word cw-3">لمنزلك</span> <span class="color-word cw-4">روح</span> <span class="color-word cw-5">وتضفي</span> <span class="color-word cw-6">لجدرانك</span> <span class="color-word cw-7">فخامة</span> <span class="color-word cw-8">وتميز</span>`;
-            }
-            
             checkBusinessStatus();
         }
 
